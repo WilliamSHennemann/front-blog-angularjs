@@ -34,7 +34,7 @@
       .post-card { width: calc(33.333% - 16px); margin: 8px; min-height: 220px; padding: 20px; background: #fff; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem; box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); display: flex; flex-direction: column; }
       .post-card h3 { margin: 16px 0 10px; font-size: 1.25rem; }
       .post-card p { color: #6c757d; flex: 1; }
-      .read-more { color: #0d6efd; }
+      .read-more { color: #0d6efd; fontsize: .9rem; text-decoration: none; }
       .button { display: inline-block; border: 1px solid #212529; border-radius: .25rem; background: #212529; color: #fff; padding: .375rem .75rem; font-size: 1rem; cursor: pointer; }
       .button:hover { background: #424649; color: #fff; }
       .button.secondary { background: #fff; color: #212529; }
@@ -84,7 +84,7 @@
       <div class="post-grid" ng-if="!carregando">
         <article class="post-card" ng-repeat="publicacao in publicacoes">
           <div class="meta">{{ publicacao.categoria || 'geral' }}</div>
-          <h3 class="read-more" href="#/postagem/{{ publicacao.id }}">{{ publicacao.titulo || publicacao.title }}</h3>
+          <a class="read-more" href="#/postagem/{{ publicacao.id }}">{{ publicacao.titulo || publicacao.title }}</a>
           <p>{{ (publicacao.conteudo || publicacao.description) | limitTo:140 }}{{ (publicacao.conteudo || publicacao.description).length > 140 ? '...' : '' }}</p>
         </article>
       </div>
