@@ -85,7 +85,6 @@
         <article class="post-card" ng-repeat="publicacao in publicacoes">
           <div class="meta">{{ publicacao.categoria || 'geral' }}</div>
           <a class="read-more" href="#/postagem/{{ publicacao.id }}">{{ publicacao.titulo || publicacao.title }}</a>
-          <p>{{ (publicacao.conteudo || publicacao.description) | limitTo:140 }}{{ (publicacao.conteudo || publicacao.description).length > 140 ? '...' : '' }}</p>
         </article>
       </div>
       <p ng-if="!carregando && !publicacoes.length">Nenhuma postagem encontrada.</p>
@@ -95,7 +94,7 @@
       <div class="error" ng-if="erro">{{ erro }}</div>
       <p class="meta">{{ postagem.categoria || 'geral' }}</p>
       <h1>{{ postagem.titulo || postagem.title }}</h1>
-      
+      <p>{{ (publicacao.conteudo || publicacao.description) | limitTo:140 }}{{ (publicacao.conteudo || publicacao.description).length > 140 ? '...' : '' }}</p>
       <button class="button" ng-click="editar(postagem)">Editar postagem</button>
       <a class="button secondary" href="#/inicio">Voltar</a>
     </section>
