@@ -84,9 +84,8 @@
       <div class="post-grid" ng-if="!carregando">
         <article class="post-card" ng-repeat="publicacao in publicacoes">
           <div class="meta">{{ publicacao.categoria || 'geral' }}</div>
-          <h3>{{ publicacao.titulo || publicacao.title }}</h3>
+          <h3 class="read-more" href="#/postagem/{{ publicacao.id }}">{{ publicacao.titulo || publicacao.title }}</h3>
           <p>{{ (publicacao.conteudo || publicacao.description) | limitTo:140 }}{{ (publicacao.conteudo || publicacao.description).length > 140 ? '...' : '' }}</p>
-          <a class="read-more" href="#/postagem/{{ publicacao.id }}">Ler postagem &rarr;</a>
         </article>
       </div>
       <p ng-if="!carregando && !publicacoes.length">Nenhuma postagem encontrada.</p>
